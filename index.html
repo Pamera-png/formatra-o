@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Cadastro Pessoal</title>
+    <script src="scripts/main.js"></script>    
+    <script src="scripts/buscaCep.js"></script>
+</head>
+<body onload="carregar()">
+    <a href="https://www.google.com">home</a>
+    <nav>
+        <ul>
+        <li><a href="https://www.google.com">share on Google</a></li>
+    <li><a href="https://www.instagram.com/">share on Instagram</a></li>
+        <li><a href="https://www.facebook.com/">share on Facebook</a></li>
+<li><a href="https://www.linkedin.com/">share on LinkedIn</a></li>
+</ul>
+</nav>
+    <h1>Seja benvindo ao nosso site para cadastro pessoal</h1><br>
+<pre>Ao preencher este formulário você estará participando do nosso sorteio Tabela Premiada para concorrer a cinco premiações que mudarão sua vida! Para ser um vencedor, você só precisará da sorte ao seu lado para acertar os números das tabelas que enviaremos no seu e-mail.</pre>            
+<h2>Confira a baixo o total de números em cada tabela, quantos números você precisará acertar para ganhar e quais serão as premiações correspondentes a cada tabela sorteada.</h2>
+<table>
+    <th>tabela total</th>
+    <th>número de acertos</th>
+    <th>prêmio</th>
+<tr>
+    <td>Primeira cartela = 50 números</td>
+    <td>5</td>
+    <td>50000 reais</td>
+</tr>
+<tr>
+    <td>segunda cartela = 100 números</td>
+    <td>10</td>
+    <td>100000 reais</td>
+</tr>
+<tr>
+    <td>terceira cartela = 200 números</td>
+    <td>20</td>
+    <td>200000 reais</td>
+</tr>
+</table>
+
+<hr>
+<h3>preencha seus dados logo a baixo</h3>
+        
+        <form action="https://www.google.com" method="GET">
+            <fieldset>
+            <legend>Dados pessoais</legend>
+        <label for="nome">Nome</label><br>
+        <input type="text" name="nome" id="nome" required placeholder="digite seu nome completo"><br>
+        <label for="cpf">CPF</label><br>
+                <input type="text" name="cpf" id="cpf" required size="14" maxlength="14" onkeypress="numeroCpf(this)" placeholder="digite o número do seu CPF" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"><br>
+                <label for="rg">RG</label><br>
+                <input type="text" name="rg" id="rg" required size="12" maxlength="12" onkeypress="numeroRg(this)" placeholder="digite o número do seu RG"><br>
+<label for="genero">gênero</label><br>
+                <label for="masculino">masculino</label>
+<input type="radio" name="genero" id="masculino" value="masculino"><br>
+<label for="feminino">feminino</label>
+<input type="radio" name="genero" id="feminino" value="feminino"><br>
+<label for="deficiencia">possui deficiência</label><br>
+<select name="deficiencia" id="deficiencia">
+    <option value="n">não possuo deficiência</option>
+    <option value="au">deficiência auditiva</option>
+    <option value="dv">deficiência visual</option>
+    <option value="df">deficiência física</option>
+    <option value="dm">deficiência mental</option>
+    <option value="outra">outra deficiência</option>
+</select><br>
+<label for="formato">formato da cartela</label><br>
+<textarea name="formato" id="formato" cols="30" rows="10" placeholder="em qual formato você prefere receber a cartela e porque? Ex: excel ou PDF"></textarea><br>
+</fieldset><br>
+<fieldset>
+    <legend>Endereço</legend>
+<label for="cep">CEP</label><br>
+<input type="text" name="cep" id="cep" required size="9" maxlength="9" onkeypress="numeroCep(this)" onblur="pesquisacep(this.value)" placeholder="digite o número do CEP"><br>
+<label for="rua">rua</label><br>
+<input type="text" name="rua" id="rua" required placeholder="digite o nome da rua"><br>
+<label for="numero">número</label><br>
+<input type="text" name="numero" id="numero" required size="4" maxlength="4" placeholder="digite o número da residência"><br>
+<label for="bairro">bairro</label><br>
+<input type="text" name="bairro" id="bairro" required placeholder="digite o nome do seu bairro"><br>
+<label for="cidade">cidade</label><br>
+<input type="text" name="cidade" id="cidade" required placeholder="digite o nome da sua cidade atual"><br>
+<label for="estado">estado</label><br>
+<input type="text" name="estado" id="estado" required placeholder="em qual estado você está morando"><br>
+</fieldset><br>
+<fieldset>
+    <legend>Contato</legend>
+<label for="telefone">telefone fixo</label><br>
+<input type="tel" name="telefone" id="telefone" required size="14" maxlength="14" onkeypress="numeroTelefone(this)" placeholder="informe seu número de telefone fixo com DDD"><br>
+<label for="celular">celular</label><br>
+<input type="tel" name="celular" id="celular" required size="15" maxlength="15" onkeypress="numeroCelular(this)" placeholder="informe seu número de celular com DDD"><br>
+<label for="e-mail">e-mail</label><br>
+<input type="email" name="e-mail" id="email" required placeholder="informe seu e-mail para enviarmos as tabelas"><br>
+</fieldset><br>
+<button type="submit" onclick = "preencher()" value = "enviar formulário">enviar formulário</button><br>
+<input type="button"onclick="limpar()" value="limpar formulário">
+
+</form>
+<hr>
+<footer>
+    <H1>Descubra mais sobre nossa empresa</H1>
+<a href="http://www.faleconosco.com">fale conosco</a>
+    <a href="http://www.quemsomos.com">quem somos</a>
+    <a href="www.yourjob.com">copyright copyright 2021 todos os direitos reservados</a>
+</footer>
+</body>
+</html>
